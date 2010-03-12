@@ -1,0 +1,13 @@
+begin
+   require 'rprb'
+rescue LoadError
+   require 'rubygems'
+   require_gem 'rprb'
+end
+
+dc = RpRb::DC.new
+while gets
+   dc.eval dc.read($_.chomp)
+end
+
+# vim:ft=ruby

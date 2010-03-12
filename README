@@ -1,0 +1,53 @@
+##
+## Intro/sample script for rprb (aka Reverse Polish RuBy)
+##
+
+{ Kernel swap puts drop } :say sto
+{ "Enter to continue..." say gets drop } :pause sto
+
+# basic RPN stuff
+1 1 + p
+2 * p
+pause
+
+# basic Ruby stuff
+zero? p
+0 zero? p
+Array.new 1 push p
+clr
+pause
+
+# obviously, lines starting with # are ignored, but also..
+<<proc { puts "hi!" }
+call
+pause
+
+# like Lisp, we have a "read" function
+"1 1 +" read p
+# which is equivalent to
+{ 1 1 + } p
+pause
+
+# and an "eval" function to evaluate the results
+eval p clr
+pause
+
+# and an "evaln" function to evaluate n times
+{ 1 1 + } 5 dupn 5 evaln p clr
+
+# we have registers..
+1 :a sto p
+:a rcl p
+
+# registers store our functions
+:drop rcl p
+{ dup2 + } :fib sto
+0 1 fib p
+
+# exen executes multiple times
+:fib 5 exen
+
+# which is equivalent to
+:fib rcl 5 evaln
+
+# and a bunch of other stuff
