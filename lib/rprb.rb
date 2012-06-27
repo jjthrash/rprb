@@ -105,7 +105,13 @@ class DC
     end
 
     def read(val)
-        @reader.read val
+        @reader.read without_comments(val)
+    end
+
+    def without_comments(string)
+      string.lines.map do |line|
+        line.gsub(/#.*$/, '')
+      end.join('')
     end
 
     def eval(tokens)
