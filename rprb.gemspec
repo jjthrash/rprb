@@ -14,11 +14,20 @@ Gem::Specification.new do |s|
   s.email = "jimmy@jimmythrasher.com"
   s.executables = ["rprb"]
   s.extra_rdoc_files = [
+    "LICENSE",
     "LICENSE.txt",
-    "README.rdoc"
+    "README"
   ]
   s.files = [
+    ".document",
+    "Gemfile",
+    "Gemfile.lock",
+    "LICENSE",
+    "LICENSE.txt",
+    "README",
+    "Rakefile",
     "VERSION",
+    "bin/rprb",
     "lib/expr.rb",
     "lib/rprb.rb",
     "rprb.gemspec",
